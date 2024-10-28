@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>voyager</title>
+    <link rel="stylesheet" href="voyage.css" />
+    >
+  </head>
+  <body>
+    <h1>Programme du voyage à Istanbul</h1>
+    <h2>
+      Programme des visites : (6 nuits et 7 jour à istanbul dans un hotel 4* ou
+      plus)
+    </h2>
+    <div class="card mb-3">
+      <img src="galata-4043037_1280.jpg" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">1er JOUR :TUNIS-ISTANBUL</h5>
+        <p class="card-text">
+          Accueil, transfert du groupe à l'hotel 4* ou plus à Istanbul Quariter
+          de laleli.
+        </p>
+        <p class="card-text"><small class="text-body-secondary"></small></p>
+      </div>
+    </div>
+    <script src="voyage.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const image = document.querySelector(".card img");
+
+        image.addEventListener("mouseenter", function () {
+          image.style.transform = "scale(1.1)"; // Agrandit l'image à 110%
+          image.style.transition = "transform 0.3s ease"; // Transition en douceur
+        });
+
+        image.addEventListener("mouseleave", function () {
+          image.style.transform = "scale(1)"; // Remet l'image à sa taille initiale
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        alert("Bienvenue sur notre programme de voyage à Istanbul !");
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cardText = document.querySelector(".card-text");
+
+        cardText.style.opacity = "0";
+        cardText.style.transition = "opacity 1.5s ease";
+
+        setTimeout(() => {
+          cardText.style.opacity = "1";
+        }, 500); // Attend 500 ms avant d’afficher le texte avec un fondu
+      });
+    </script>
+    <div class="card-body">
+      <h5 class="card-title">
+        Du 2éme JOUR ey jusqu'au 6éme jour TUNIS-ISTANBUL
+      </h5>
+    </div>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <div class="col">
+        <div class="card">
+          <img
+            src="istockphoto-160193420-2048x2048.jpg"
+            class="card-img-top"
+            alt="Visite Istanbul"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Visite des monuments historiques</h5>
+            <p
+              class="card-text"
+              id="additional-text-1"
+              style="display: none; opacity: 0"
+            >
+              Visite de la ville d’Istanbul : mosquée Bleue, Hippodrome, Grand
+              Bazar, Mosquée Aya Sofia (extérieur), Jardin Gulhane…
+            </p>
+            <button class="view-more-btn" onclick="toggleText(1)">
+              Voir Plus
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img
+            src="pexels-424fotograf-169879395-27705570.jpg"
+            class="card-img-top"
+            alt="Visite Cote Asiatique"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Côte asiatique et colline de Camlica</h5>
+            <p
+              class="card-text"
+              id="additional-text-2"
+              style="display: none; opacity: 0"
+            >
+              Visite de la côte asiatique, colline de Camlica, mausolée d’EYUP,
+              café Pierre Loti, Corne d’Or, Mosquée Camlica.
+            </p>
+            <button class="view-more-btn" onclick="toggleText(2)">
+              Voir Plus
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img
+            src="free-photo-of-tour-de-galata.jpeg"
+            class="card-img-top"
+            alt="Balat, Taksim, Galata"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Balat, Taksim et la place de Galata</h5>
+            <p
+              class="card-text"
+              id="additional-text-3"
+              style="display: none; opacity: 0"
+            >
+              Découvrez Balat, Taksim et la célèbre tour de Galata.
+            </p>
+            <button class="view-more-btn" onclick="toggleText(3)">
+              Voir Plus
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img
+            src="istockphoto-1301405637-1024x1024.jpg"
+            class="card-img-top"
+            alt="Croisière sur le Bosphore"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Excursions et croisières</h5>
+            <p
+              class="card-text"
+              id="additional-text-4"
+              style="display: none; opacity: 0"
+            >
+              Croisières sur le Bosphore, excursion à Sapanca et Masukiye avec
+              déjeuner, et visite de Miniaturk.
+            </p>
+            <button class="view-more-btn" onclick="toggleText(4)">
+              Voir Plus
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleText(id) {
+        const text = document.getElementById("additional-text-" + id);
+        const btn = document.querySelector(".view-more-btn");
+
+        if (text.style.display === "none") {
+          text.style.display = "block";
+          text.style.opacity = "1";
+          btn.innerText = "Voir Moins";
+        } else {
+          text.style.display = "none";
+          text.style.opacity = "0";
+          btn.innerText = "Voir Plus";
+        }
+      }
+    </script>
+    <button id="back-to-top" style="display: none">Retour en haut</button>
+    <a href="https://www.voyage_istanbul.com" target="_blank"
+      >Cliquez ici pour visiter le site</a
+    >
+  </body>
+</html>
